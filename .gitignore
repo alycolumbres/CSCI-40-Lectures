@@ -4,4 +4,3 @@ geckodriver
 geckodriver.log
 *.pyc
 */__pycache__
-environment/
