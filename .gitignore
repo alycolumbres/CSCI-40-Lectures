@@ -3,4 +3,5 @@ db.sqlite3
 geckodriver
 geckodriver.log
 *.pyc
-*/__pycache__
+*/__pycache__myenv/
+myenv/
