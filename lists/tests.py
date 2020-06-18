@@ -16,6 +16,7 @@ class HomePageTest(TestCase):
 		self.assertIn('A new list item', response.content.decode())
 		self.assertTemplateUsed(response, 'home.html')
 
+
 # class ListPageTest(TestCase):
 
 # 	def test_list_page_returns_correct_html(self):
@@ -28,6 +29,8 @@ class HomePageTest(TestCase):
 # 	def test_create_page_returns_correct_html(self):
 # 		response = self.client.get('/tasks/new')
 # 		self.assertTemplateUsed(response, 'task_create_form.html')
+
+
 # classes --> database tables | class attributes --> database fields (columns) | instances of classes --> individual records (rows) of the database table
 # To test models, we need to assume what the database should contain. This is because we haven't created our models yet. Ideally, database design documents are created first before any development happens.
 class ItemModelTest(TestCase):
