@@ -12,6 +12,11 @@ class Item(models.Model):
 	created_on = models.DateTimeField(auto_now_add=True)
 	modified_on = models.DateTimeField(auto_now=True)
 
+	# allows Item object to be displayed as a string
+	def __str__(self):
+		return self.text
+
+	@property
 	def tags(self):
 		# _set is a reverse relation
 		# looking at all of that which is related to me
