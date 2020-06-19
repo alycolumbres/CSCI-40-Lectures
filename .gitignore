@@ -5,6 +5,7 @@ geckodriver.log
 *.pyc
 */__pycache__myenv/
 myenv/
+.env
 environment/bin/activate
 environment/bin/activate.csh
 environment/bin/activate.fish
