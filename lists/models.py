@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 
 
 class Item(models.Model):
@@ -15,6 +16,14 @@ class Item(models.Model):
 	# allows Item object to be displayed as a string
 	def __str__(self):
 		return self.text
+
+	# Each item would now have an absolute URL, a URL that's linked to it that can be referenced in our template.
+	# kwargs --> what that id is for; takes in an object (because that's why it's keywords)
+	# That's why it's a named dictionary.
+	# It says that our URL for this item is going to be task/id; that's what the reverse() does. It looks up the URLs and looks for that name.
+	# The keyword argument 'id' is going to be equal to the primary key of this model (self.id?).
+	def get_absolute_url(self):
+		return reverse('task_detail', kwargs={'id': str(self.id)})
 
 	@property
 	def tags(self):

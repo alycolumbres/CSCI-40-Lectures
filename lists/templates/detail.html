@@ -1,0 +1,12 @@
+ {% extends "base.html" %}
+
+{% block title %}{{ task.text|truncatechars:10 }}{% endblock %}
+
+{% block content %}
+	<section>
+		<h1>{{ task.text }}</h1>
+		<p>Created on: {{ task.created_on }}</p>
+		<p>Modified on: {{ task.modified_on }}</p>
+		<p>Tags: {{ task.tags }}</p>
+	</section>
+{% endblock %}

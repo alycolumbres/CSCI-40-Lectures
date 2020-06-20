@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Task List{% endblock %}
+
+{% block content %}
+<section>
+	<h1>Task List in Database</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Task Name</th>
+				<th>Task Tags</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- 'tasks' is made accessible in views.py -->
+			{% for task in tasks %}
+			<tr>
+				<td>
+					<!-- target attribute opens a new tab -->
+					<a href="{{ task.get_absolute_url }}" target="_blank">
+						{{ task.text }}
+					</a>
+				</td>
+				<td>
+					<ul>
+						{% for tag in task.tag_set.all %}
+						<li>{{ tag.tag_name }}</li>
+						{% endfor %}
+					</ul>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</section>
+{% endblock %}
