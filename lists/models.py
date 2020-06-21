@@ -25,7 +25,7 @@ class Item(models.Model):
 	def get_absolute_url(self):
 		return reverse('task_detail', kwargs={'id': str(self.id)})
 
-	@property
+	@property # 'tags' is a string property
 	def tags(self):
 		# _set is a reverse relation
 		# looking at all of that which is related to me
